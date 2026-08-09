@@ -12,7 +12,7 @@
     "dev:sites": "vinext dev",
     "build:sites": "vinext build",
     "start:sites": "vinext start",
-    "test": "npm run build && node --test tests/pwa-assets.test.mjs",
+    "test": "npm run build && node --test tests/pwa-assets.test.mjs tests/content-packs.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },
