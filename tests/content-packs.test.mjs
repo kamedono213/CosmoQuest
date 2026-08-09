@@ -22,19 +22,25 @@ test("all content JSON files parse and item IDs stay unique", async () => {
   assert.ok(files.length > 0);
 });
 
-test("POLARIS-0142 includes complete lesson and quiz data", async () => {
+test("latest Polaris topics include complete lesson and quiz data", async () => {
   const pack = JSON.parse(await readFile(new URL("pack009-topics-0136-0137.json", contentRoot), "utf8"));
-  const topic = pack.items.find((item) => item.id === "POLARIS-0142");
-  assert.ok(topic, "POLARIS-0142 is missing");
-  assert.equal(topic.questions.length, 5);
-  assert.equal(topic.points.length, 5);
-  assert.equal(topic.stage, "star");
-  assert.equal(topic.class, "恒星物理(こうせいぶつり)");
-  assert.ok(topic.body.includes("核融合(かくゆうごう)"));
-  assert.ok(topic.sources.includes("https://science.nasa.gov/sun/"));
-  for (const question of topic.questions) {
-    assert.equal(question.options.length, 4);
-    assert.ok(Number.isInteger(question.correct));
-    assert.ok(question.correct >= 0 && question.correct < question.options.length);
+  const expectations = [
+    { id: "POLARIS-0142", keyword: "核融合(かくゆうごう)", source: "https://science.nasa.gov/sun/" },
+    { id: "POLARIS-0143", keyword: "絶対等級(ぜったいとうきゅう)", source: "https://science.nasa.gov/universe/stars/" },
+  ];
+  for (const expected of expectations) {
+    const topic = pack.items.find((item) => item.id === expected.id);
+    assert.ok(topic, `${expected.id} is missing`);
+    assert.equal(topic.questions.length, 5);
+    assert.equal(topic.points.length, 5);
+    assert.equal(topic.stage, "star");
+    assert.equal(topic.class, "恒星物理(こうせいぶつり)");
+    assert.ok(topic.body.includes(expected.keyword));
+    assert.ok(topic.sources.includes(expected.source));
+    for (const question of topic.questions) {
+      assert.equal(question.options.length, 4);
+      assert.ok(Number.isInteger(question.correct));
+      assert.ok(question.correct >= 0 && question.correct < question.options.length);
+    }
   }
 });
