@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export const APP_VERSION=process.env.NEXT_PUBLIC_APP_VERSION??"0.1.0";
-export const PWA_VERSION=process.env.NEXT_PUBLIC_PWA_VERSION??"cosmo-quest-v5";
+export const PWA_VERSION=process.env.NEXT_PUBLIC_PWA_VERSION??"cosmo-quest-v6";
 const GUIDE_KEY="cosmo-quest-install-guide-hidden";
 const UPDATE_INTERVAL=60*60*1000;
 
