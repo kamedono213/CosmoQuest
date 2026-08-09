@@ -1,4 +1,4 @@
-const VERSION = "cosmo-quest-v6";
+const VERSION = "cosmo-quest-v7";
 const STATIC_CACHE = `${VERSION}-static`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 const APP_SHELL = [
@@ -9,6 +9,7 @@ const APP_SHELL = [
   "/icons/icon-192.png",
   "/icons/icon-512.png",
   "/icons/apple-touch-icon.png",
+  "/audio/main.mp3",
 ];
 
 self.addEventListener("install", (event) => {
