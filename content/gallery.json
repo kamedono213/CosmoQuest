@@ -1,0 +1,5 @@
+{"schemaVersion":1,"items":[
+{"id":"earth","stageId":"earth","category":"惑星","title":"地球(ちきゅう)","subtitle":"青(あお)い生命(せいめい)の惑星(わくせい)","icon":"🌍","description":"太陽系(たいようけい)で生命(せいめい)が確認(かくにん)されている唯一(ゆいいつ)の惑星(わくせい)。","facts":[{"label":"直径(ちょっけい)","value":"約(やく)12742キロメートル"},{"label":"衛星(えいせい)","value":"月(つき)"}],"relatedIds":["moon","sun"],"tags":["惑星","太陽系","生命"]},
+{"id":"moon","stageId":"moon","category":"衛星","title":"月(つき)","subtitle":"地球(ちきゅう)の自然(しぜん)衛星(えいせい)","icon":"🌙","description":"地球(ちきゅう)の周(まわ)りを公転(こうてん)する身近(みぢか)な天体(てんたい)。","facts":[{"label":"公転(こうてん)周期(しゅうき)","value":"約(やく)27.3日(にち)"}],"relatedIds":["earth"],"tags":["衛星","満ち欠け"]},
+{"id":"sun","stageId":"sun","category":"恒星","title":"太陽(たいよう)","subtitle":"太陽系(たいようけい)の中心(ちゅうしん)","icon":"☀️","description":"核融合(かくゆうごう)で光(ひかり)と熱(ねつ)を放(はな)つ恒星(こうせい)。","facts":[{"label":"分類(ぶんるい)","value":"恒星(こうせい)"}],"relatedIds":["earth"],"tags":["恒星","太陽系"]}
+]}

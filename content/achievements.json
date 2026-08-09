@@ -1,0 +1,10 @@
+{"schemaVersion":1,"items":[
+{"id":"first-answer","title":"最初(さいしょ)の一問(いちもん)","description":"初(はじ)めて問題(もんだい)に答(こた)えた","icon":"🚀","condition":{"metric":"answered","threshold":1}},
+{"id":"earth-clear","title":"青(あお)い惑星(わくせい)","description":"地球(ちきゅう)をクリアした","icon":"🌍","condition":{"metric":"completedStages","threshold":1}},
+{"id":"moon-arrival","title":"月(つき)への航路(こうろ)","description":"月(つき)に到達(とうたつ)した","icon":"🌙","condition":{"metric":"completedStages","threshold":2}},
+{"id":"hundred-correct","title":"百問(ひゃくもん)の星(ほし)","description":"100問(もん)に正解(せいかい)した","icon":"💯","condition":{"metric":"correct","threshold":100}},
+{"id":"five-hundred","title":"知識(ちしき)の銀河(ぎんが)","description":"500問(もん)に正解(せいかい)した","icon":"🌌","condition":{"metric":"correct","threshold":500}},
+{"id":"thousand","title":"千問(せんもん)の探究者(たんきゅうしゃ)","description":"1000問(もん)に正解(せいかい)した","icon":"🏆","condition":{"metric":"correct","threshold":1000}},
+{"id":"gallery-half","title":"図鑑(ずかん)の研究者(けんきゅうしゃ)","description":"図鑑(ずかん)を50パーセント集(あつ)めた","icon":"📚","condition":{"metric":"galleryRate","threshold":50}},
+{"id":"gallery-all","title":"宇宙(うちゅう)の記録者(きろくしゃ)","description":"図鑑(ずかん)を100パーセント集(あつ)めた","icon":"👑","condition":{"metric":"galleryRate","threshold":100}}
+]}

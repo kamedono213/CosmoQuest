@@ -1,0 +1,6 @@
+{"schemaVersion":1,"items":[
+{"id":"vega","name":"ベガ","stars":1,"subtitle":"入門(にゅうもん)","internalGrade":4,"color":"#8fe8ff"},
+{"id":"altair","name":"アルタイル","stars":2,"subtitle":"基礎(きそ)","internalGrade":3,"color":"#f3d680"},
+{"id":"sirius","name":"シリウス","stars":3,"subtitle":"中級(ちゅうきゅう)","internalGrade":2,"color":"#b8c9ff"},
+{"id":"polaris","name":"ポラリス","stars":4,"subtitle":"上級(じょうきゅう)","internalGrade":1,"color":"#d8b6ff"}
+]}

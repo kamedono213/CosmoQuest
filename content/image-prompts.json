@@ -1,0 +1,5 @@
+{"schemaVersion":1,"items":[
+{"id":"earth-gallery-main","topicIds":["earth-overview"],"purpose":"gallery","prompt":"宇宙から見た地球。雲、海、陸地を科学的に自然な比率で描く。文字なし。","style":"リアル寄り教育イラスト","background":"深い宇宙背景","textPolicy":"文字なし"},
+{"id":"moon-gallery-main","topicIds":["moon-overview"],"purpose":"gallery","prompt":"月の表面とクレーターを正確に描く。文字なし。","style":"リアル寄り教育イラスト","background":"白","textPolicy":"文字なし"},
+{"id":"rotation-diagram","topicIds":["rotation"],"purpose":"diagram","prompt":"地球の自転軸と西から東への回転方向を示す教育図解。","style":"統一された科学図解","background":"白","textPolicy":"必要最小限の日本語ラベル"}
+]}
