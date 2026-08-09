@@ -1,0 +1,5 @@
+{"schemaVersion":1,"items":[
+{"id":"daily-correct-3","kind":"daily","title":"今日(きょう)の三問(さんもん)","description":"問題(もんだい)に3問(もん)正解(せいかい)する","metric":"correct","target":3,"xpReward":30},
+{"id":"weekly-correct-20","kind":"weekly","title":"週間(しゅうかん)トレーニング","description":"問題(もんだい)に20問(もん)正解(せいかい)する","metric":"correct","target":20,"xpReward":100},
+{"id":"event-gallery-5","kind":"event","title":"図鑑調査(ずかんちょうさ)","description":"図鑑(ずかん)を5件(けん)解放(かいほう)する","metric":"gallery","target":5,"xpReward":150}
+]}

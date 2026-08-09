@@ -1,0 +1,9 @@
+.git
+.next
+.vinext
+.wrangler
+dist
+coverage
+node_modules
+npm-debug.log*
+*.local

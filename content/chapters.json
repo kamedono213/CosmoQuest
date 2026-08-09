@@ -1,0 +1,19 @@
+{"schemaVersion":1,"items":[
+{"id":"vega-welcome","rankId":"vega","order":1,"title":"第(だい)0章(しょう) 宇宙(うちゅう)への招待(しょうたい)","stageIds":["earth"]},
+{"id":"vega-earth-moon","rankId":"vega","order":2,"title":"月(つき)と地球(ちきゅう)","stageIds":["earth","moon"]},
+{"id":"vega-sun","rankId":"vega","order":3,"title":"太陽(たいよう)","stageIds":["sun"]},
+{"id":"vega-solar-system","rankId":"vega","order":4,"title":"太陽系(たいようけい)","stageIds":["mercury","venus","mars","jupiter","saturn","uranus","neptune","dwarf","asteroid","comet","meteor"]},
+{"id":"vega-constellations","rankId":"vega","order":5,"title":"星座(せいざ)の世界(せかい)","stageIds":["star"]},
+{"id":"vega-stars-galaxies","rankId":"vega","order":6,"title":"恒星(こうせい)と銀河(ぎんが)","stageIds":["star","cluster","nebula","galaxy"]},
+{"id":"vega-observation","rankId":"vega","order":7,"title":"天体観測(てんたいかんそく)","stageIds":["earth","star"]},
+{"id":"vega-certification","rankId":"vega","order":8,"title":"ベガ認定(にんてい)テスト","stageIds":[]},
+{"id":"altair-course","rankId":"altair","order":1,"title":"アルタイル航路(こうろ)","stageIds":["sun"]},
+{"id":"altair-solar-system","rankId":"altair","order":2,"title":"第(だい)3章(しょう) 太陽系(たいようけい)","stageIds":["mercury","venus","earth","mars","jupiter","saturn","uranus","neptune","dwarf","asteroid","comet"]},
+{"id":"sirius-course","rankId":"sirius","order":1,"title":"シリウス航路(こうろ)","stageIds":[]},
+{"id":"sirius-stars","rankId":"sirius","order":2,"title":"第(だい)4章(しょう) 恒星(こうせい)と星座(せいざ)","stageIds":["star","cluster","nebula"]},
+{"id":"polaris-course","rankId":"polaris","order":1,"title":"ポラリス航路(こうろ)","stageIds":[]}
+,{"id":"polaris-cosmology","rankId":"polaris","order":2,"title":"第(だい)5章(しょう) 宇宙(うちゅう)の誕生(たんじょう)と進化(しんか)","stageIds":["galaxy"]}
+,{"id":"polaris-spaceflight","rankId":"polaris","order":3,"title":"第(だい)6章(しょう) 宇宙開発(うちゅうかいはつ)と探査(たんさ)","stageIds":["earth"]}
+,{"id":"polaris-life","rankId":"polaris","order":4,"title":"第(だい)7章(しょう) 宇宙(うちゅう)で生命(せいめい)を探(さが)す","stageIds":["earth","star","mars","jupiter"]}
+,{"id":"polaris-frontier","rankId":"polaris","order":5,"title":"第(だい)8章(しょう) 宇宙(うちゅう)の謎(なぞ)と最先端天文学(さいせんたんてんもんがく)","stageIds":["black-hole","galaxy"]}
+]}

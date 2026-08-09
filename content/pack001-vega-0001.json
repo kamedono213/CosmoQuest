@@ -1,0 +1,26 @@
+{
+  "packId":"Pack001",
+  "topic":{
+    "id":"VEGA-0001","title":"宇宙(うちゅう)とは？","category":"宇宙(うちゅう)",
+    "description":"宇宙(うちゅう)とは、地球(ちきゅう)や太陽(たいよう)、月(つき)、惑星(わくせい)、恒星(こうせい)、銀河(ぎんが)など、すべての天体(てんたい)と、それらの間(あいだ)に広(ひろ)がる空間(くうかん)を含(ふく)めた全体(ぜんたい)のことです。私(わたし)たちが住(す)む地球(ちきゅう)も宇宙(うちゅう)の一部(いちぶ)です。夜空(よぞら)に見(み)える星(ほし)の多(おお)くは、太陽(たいよう)と同(おな)じように自(みずか)ら光(ひかり)を放(はな)つ恒星(こうせい)です。宇宙(うちゅう)には数(かぞ)えきれないほど多(おお)くの銀河(ぎんが)があり、その一(ひと)つが私(わたし)たちの住(す)む天(あま)の川銀河(がわぎんが)です。現在(げんざい)の観測(かんそく)では、宇宙(うちゅう)は約(やく)138億年前(おくねんまえ)に始(はじ)まり、現在(げんざい)も膨張(ぼうちょう)していると考(かんが)えられています。",
+    "importance":5,"difficulty":1,"grades":[4],"prerequisiteTopicIds":[],"relatedTopicIds":["earth-overview"],"galleryId":"gallery-VEGA-0001","imageIds":[],"diagramIds":[],"triviaIds":["trivia-VEGA-0001"],"questionIds":["VEGA-0001-Q1","VEGA-0001-Q2","VEGA-0001-Q3","VEGA-0001-Q4","VEGA-0001-Q5"],"animationIds":[],"order":0,"packId":"Pack001","chapterId":"vega-welcome","areaId":"area-universe","tags":["ベガ","第0章","宇宙","reviewed"],"keyPoints":["宇宙(うちゅう)にはすべての天体(てんたい)が含(ふく)まれる","地球(ちきゅう)も宇宙(うちゅう)の一部(いちぶ)","宇宙(うちゅう)には数(かぞ)えきれないほど多(おお)くの銀河(ぎんが)がある","宇宙(うちゅう)は現在(げんざい)も膨張(ぼうちょう)していると考(かんが)えられている"],"requiredCorrect":4,
+    "sourceUrls":["https://www.nao.ac.jp/","https://www.astro-test.org/","https://science.nasa.gov/exoplanets/what-is-the-universe/","https://www.esa.int/Science_Exploration/Space_Science/Hubble_science_highlights"]
+  },
+  "trivia":{"id":"trivia-VEGA-0001","topicIds":["VEGA-0001"],"title":"宇宙空間(うちゅうくうかん)は完全(かんぜん)な真空(しんくう)？","body":"宇宙空間(うちゅうくうかん)は完全(かんぜん)な真空(しんくう)ではありません。ごくわずかなガスやちり、電磁波(でんじは)などが存在(そんざい)しています。","sourceNote":"NAOJ / NASA Science"},
+  "gallery":{"id":"gallery-VEGA-0001","category":"宇宙(うちゅう)","title":"宇宙(うちゅう)","subtitle":"すべての天体(てんたい)と空間(くうかん)を含(ふく)む世界(せかい)","icon":"✨","description":"宇宙(うちゅう)とは、地球(ちきゅう)や太陽(たいよう)、星(ほし)、銀河(ぎんが)、空間(くうかん)など、すべてを含(ふく)めた世界全体(せかいぜんたい)を指(さ)します。","facts":[{"label":"年齢(ねんれい)","value":"約(やく)138億年(おくねん)"},{"label":"現在(げんざい)","value":"膨張中(ぼうちょうちゅう)"}],"relatedIds":[],"tags":["pack:Pack001","ベガ","宇宙"],"packId":"Pack001","relatedTopicIds":["VEGA-0001"],"relatedQuestionIds":["VEGA-0001-Q1","VEGA-0001-Q2","VEGA-0001-Q3","VEGA-0001-Q4","VEGA-0001-Q5"],"triviaIds":["trivia-VEGA-0001"]},
+  "imagePrompt":{"id":"image-prompt-VEGA-0001","topicIds":["VEGA-0001"],"purpose":"gallery","prompt":"Educational illustration of outer space showing Earth, the Sun, the Moon, distant stars, spiral galaxies and colorful nebulae, scientifically accurate, vibrant educational art, no text, no labels.","style":"科学的(かがくてき)に正確(せいかく)な教育(きょういく)イラスト","background":"宇宙(うちゅう)","textPolicy":"文字(もじ)・ラベルなし"},
+  "questions":[
+    {"id":"VEGA-0001-Q1","stageId":"earth","topicId":"VEGA-0001","type":"multiple-choice","grade":4,"difficulty":1,"category":"宇宙(うちゅう)","tags":["pack:Pack001","ベガ","第0章"],"prompt":"宇宙(うちゅう)に含(ふく)まれるものはどれですか。","options":["地球(ちきゅう)だけ","太陽(たいよう)だけ","地球(ちきゅう)・太陽(たいよう)・銀河(ぎんが)などすべて","星(ほし)だけ"],"correct":2,"relatedGalleryIds":["gallery-VEGA-0001"]},
+    {"id":"VEGA-0001-Q2","stageId":"earth","topicId":"VEGA-0001","type":"true-false","grade":4,"difficulty":1,"category":"宇宙(うちゅう)","tags":["pack:Pack001","ベガ","第0章"],"prompt":"私(わたし)たちが住(す)んでいる地球(ちきゅう)は、宇宙(うちゅう)の一部(いちぶ)である。","options":["○","×"],"correct":0,"relatedGalleryIds":["gallery-VEGA-0001"]},
+    {"id":"VEGA-0001-Q3","stageId":"earth","topicId":"VEGA-0001","type":"multiple-choice","grade":4,"difficulty":1,"category":"宇宙(うちゅう)","tags":["pack:Pack001","ベガ","第0章"],"prompt":"夜空(よぞら)に見(み)える多(おお)くの星(ほし)は何(なん)ですか。","options":["惑星(わくせい)","恒星(こうせい)","月(つき)","彗星(すいせい)"],"correct":1,"relatedGalleryIds":["gallery-VEGA-0001"]},
+    {"id":"VEGA-0001-Q4","stageId":"earth","topicId":"VEGA-0001","type":"multiple-choice","grade":4,"difficulty":1,"category":"宇宙(うちゅう)","tags":["pack:Pack001","ベガ","第0章"],"prompt":"私(わたし)たちの太陽系(たいようけい)が属(ぞく)している銀河(ぎんが)はどれですか。","options":["アンドロメダ銀河(ぎんが)","天(あま)の川銀河(がわぎんが)","ソンブレロ銀河(ぎんが)","子持(こも)ち銀河(ぎんが)"],"correct":1,"relatedGalleryIds":["gallery-VEGA-0001"]},
+    {"id":"VEGA-0001-Q5","stageId":"earth","topicId":"VEGA-0001","type":"multiple-choice","grade":4,"difficulty":1,"category":"宇宙(うちゅう)","tags":["pack:Pack001","ベガ","第0章"],"prompt":"現在(げんざい)の科学(かがく)では、宇宙(うちゅう)はどうなっていると考(かんが)えられていますか。","options":["小(ちい)さくなっている","大(おお)きさは変(か)わらない","今(いま)も膨張(ぼうちょう)している","毎日(まいにち)作(つく)られている"],"correct":2,"relatedGalleryIds":["gallery-VEGA-0001"]}
+  ],
+  "explanations":[
+    {"id":"exp-VEGA-0001-Q1","conclusion":"宇宙(うちゅう)には地球(ちきゅう)・太陽(たいよう)・銀河(ぎんが)などすべてが含(ふく)まれます。","reason":"宇宙(うちゅう)は、すべての天体(てんたい)と、それらの間(あいだ)に広(ひろ)がる空間(くうかん)を含(ふく)む全体(ぜんたい)だからです。"},
+    {"id":"exp-VEGA-0001-Q2","conclusion":"○が正解(せいかい)です。","reason":"地球(ちきゅう)は太陽系(たいようけい)に属(ぞく)し、太陽系(たいようけい)は天(あま)の川銀河(がわぎんが)の中(なか)にあります。"},
+    {"id":"exp-VEGA-0001-Q3","conclusion":"夜空(よぞら)の星(ほし)の多(おお)くは恒星(こうせい)です。","reason":"恒星(こうせい)は、太陽(たいよう)と同(おな)じように自(みずか)ら光(ひかり)を放(はな)つ天体(てんたい)です。"},
+    {"id":"exp-VEGA-0001-Q4","conclusion":"太陽系(たいようけい)は天(あま)の川銀河(がわぎんが)に属(ぞく)します。","reason":"天(あま)の川銀河(がわぎんが)は、太陽(たいよう)と太陽系(たいようけい)を含(ふく)む銀河(ぎんが)です。"},
+    {"id":"exp-VEGA-0001-Q5","conclusion":"宇宙(うちゅう)は今(いま)も膨張(ぼうちょう)しています。","reason":"遠(とお)い銀河(ぎんが)の観測(かんそく)などから、宇宙(うちゅう)の空間(くうかん)そのものが広(ひろ)がり続(つづ)けていると考(かんが)えられています。"}
+  ]
+}

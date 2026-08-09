@@ -1,0 +1,7 @@
+{"schemaVersion":1,"items":[
+{"id":"earth-blue","topicIds":["earth-overview"],"title":"青(あお)い惑星(わくせい)","body":"地表(ちひょう)の約(やく)71パーセントが海(うみ)です。","sourceNote":"基礎天文学"},
+{"id":"earth-speed","topicIds":["rotation"],"title":"高速(こうそく)の自転(じてん)","body":"赤道(せきどう)付近(ふきん)は時速(じそく)およそ1670キロメートルで動(うご)いています。"},
+{"id":"leap-year","topicIds":["earth-orbit"],"title":"うるう年(どし)","body":"公転(こうてん)周期(しゅうき)の端数(はすう)を暦(こよみ)で調整(ちょうせい)します。"},
+{"id":"moon-distance","topicIds":["moon-overview"],"title":"月(つき)までの距離(きょり)","body":"平均(へいきん)距離(きょり)は約(やく)38万(まん)4400キロメートルです。"},
+{"id":"same-face","topicIds":["moon-rotation"],"title":"同(おな)じ面(めん)","body":"自転(じてん)と公転(こうてん)の周期(しゅうき)がほぼ同(おな)じため、月(つき)はほぼ同(おな)じ面(めん)を地球(ちきゅう)へ向(む)けます。"}
+]}

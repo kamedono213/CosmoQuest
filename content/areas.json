@@ -1,0 +1,10 @@
+{"schemaVersion":1,"items":[
+{"id":"area-universe","chapterId":"vega-welcome","order":1,"title":"宇宙(うちゅう)","stageIds":["earth"]},
+{"id":"area-earth","chapterId":"vega-earth-moon","order":1,"title":"🌍 地球(ちきゅう)","stageIds":["earth"]},
+{"id":"area-moon","chapterId":"vega-earth-moon","order":2,"title":"🌙 月(つき)","stageIds":["moon"]},
+{"id":"area-sun","chapterId":"vega-sun","order":1,"title":"☀️ 太陽(たいよう)","stageIds":["sun"]},
+{"id":"area-rocky","chapterId":"vega-solar-system","order":1,"title":"岩石惑星(がんせきわくせい)","stageIds":["mercury","venus","mars"]},
+{"id":"area-giants","chapterId":"vega-solar-system","order":2,"title":"巨大惑星(きょだいわくせい)","stageIds":["jupiter","saturn","uranus","neptune"]},
+{"id":"area-small-bodies","chapterId":"vega-solar-system","order":3,"title":"太陽系小天体(たいようけいしょうてんたい)","stageIds":["dwarf","asteroid","comet","meteor"]},
+{"id":"area-deep-space","chapterId":"vega-stars-galaxies","order":1,"title":"深宇宙(しんうちゅう)","stageIds":["star","cluster","nebula","galaxy"]}
+]}
