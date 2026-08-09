@@ -46,6 +46,17 @@
 - push後はVercelデプロイを確認し、失敗時は原因を修正する。
 - 公開URLでトップ画面、Topic、問題、図鑑、PWA、Service Workerを確認する。
 
+## Vercel運用
+
+- このリポジトリはGitHubとVercelを連携して運用する。
+- 初回デプロイ後は、GitHubの`main`ブランチへのpushをVercelの自動デプロイトリガーとする。
+- push後はGitHub Actions（存在する場合）とVercel Deploymentの成功を確認する。
+- 公開URLがHTTP 200を返すことを確認する。
+- 公開環境でPWA manifest、Service Workerの登録と更新、Console Error 0件を確認する。
+- デプロイが失敗した場合は原因を修正し、品質ゲートを再実行して、成功するまで修正コミットとpushを繰り返す。
+- 初回Vercel連携が未完了の場合は、推測で別プロジェクトを作成せず、未連携であることと必要な設定を報告する。
+- 作業完了報告には、毎回Vercel Deployment結果と公開URLを含める。
+
 ## 完了報告
 
 作業終了時は次を報告する。
