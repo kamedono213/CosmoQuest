@@ -4,4 +4,15 @@ export function updateTopicProgress(previous:TopicProgress|undefined,correct:boo
 export function topicAccuracy(p?:TopicProgress){return p?.answered?Math.round(p.correct/p.answered*100):0}
 export function isTopicAvailable(topic:Topic,user:UserData){return topic.prerequisiteTopicIds.every(id=>["understood","strong","mastered"].includes(user.topicProgress[id]?.status??""))}
 export function orderedLearningPath(topics:Topic[],user:UserData){return [...topics].sort((a,b)=>{const aa=isTopicAvailable(a,user)?0:1;const bb=isTopicAvailable(b,user)?0:1;return aa-bb||a.order-b.order})}
-export function generateMockExam(questions:Question[],grade:3|4|5,count=20){const pool=questions.filter(q=>q.grade===grade||q.grade>grade);const buckets=new Map<string,Question[]>();pool.forEach(q=>buckets.set(q.category,[...(buckets.get(q.category)??[]),q]));const picked:Question[]=[];while(picked.length<Math.min(count,pool.length)){let changed=false;for(const list of buckets.values()){const q=list.shift();if(q){picked.push(q);changed=true;if(picked.length>=count)break}}if(!changed)break}return picked}
+export function generateMockExam(questions:Question[],grade:1|2|3|4|5,count=20){
+  const pool=questions.filter(q=>q.grade===grade);
+  const buckets=new Map<string,Question[]>();
+  for(const q of [...pool].sort(()=>Math.random()-.5))buckets.set(q.category,[...(buckets.get(q.category)??[]),q]);
+  const categories=[...buckets.keys()].sort(()=>Math.random()-.5),picked:Question[]=[];
+  while(picked.length<Math.min(count,pool.length)){
+    let changed=false;
+    for(const category of categories){const q=buckets.get(category)?.shift();if(q){picked.push(q);changed=true;if(picked.length>=count)break}}
+    if(!changed)break;
+  }
+  return picked;
+}
