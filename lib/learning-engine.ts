@@ -4,6 +4,11 @@ export function updateTopicProgress(previous:TopicProgress|undefined,correct:boo
 export function topicAccuracy(p?:TopicProgress){return p?.answered?Math.round(p.correct/p.answered*100):0}
 export function isTopicAvailable(topic:Topic,user:UserData){return topic.prerequisiteTopicIds.every(id=>["understood","strong","mastered"].includes(user.topicProgress[id]?.status??""))}
 export function orderedLearningPath(topics:Topic[],user:UserData){return [...topics].sort((a,b)=>{const aa=isTopicAvailable(a,user)?0:1;const bb=isTopicAvailable(b,user)?0:1;return aa-bb||a.order-b.order})}
+export function selectRandomQuestions(questions:Question[],count:number){
+  const shuffled=[...questions];
+  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}
+  return shuffled.slice(0,Math.min(count,shuffled.length));
+}
 export function generateMockExam(questions:Question[],grade:1|2|3|4|5,count=20){
   const pool=questions.filter(q=>q.grade===grade);
   const buckets=new Map<string,Question[]>();

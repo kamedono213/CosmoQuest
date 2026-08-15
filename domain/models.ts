@@ -81,7 +81,8 @@ export interface AppSettings {
 export interface QuestionHistory { questionId: string; correct: boolean; answeredAt: string; elapsedSeconds: number }
 export interface LearningHistory { lessonId: string; completedAt: string; elapsedSeconds: number }
 export interface ReviewItem { questionId: string; dueAt: string; intervalDays: number; ease: number }
-export interface LearningResume { stageId:string; quizIndex:number; view:"quiz"|"explanation"; answer:AnswerValue|null; isCorrect:boolean; savedAt:string }
+export interface LearningResume { stageId:string; quizIndex:number; view:"quiz"|"explanation"; answer:AnswerValue|null; isCorrect:boolean; savedAt:string; questionIds?:string[] }
+export interface MockExamResume { rankId:"vega"|"altair"|"sirius"|"polaris"; questionIds:string[]; index:number; correct:number; misses:Record<string,number>; startedAt:number; savedAt:string }
 export interface GalleryItem { id:string; stageId?:string; category:string; title:FuriganaText; subtitle:FuriganaText; icon:string; description:FuriganaText; facts:Array<{label:FuriganaText;value:FuriganaText}>; relatedIds:string[]; tags:string[]; packId?:string; createdAt?:string; imageIds?:string[]; aiIllustrationIds?:string[]; photoIds?:string[]; comparison?:FuriganaText; relatedTopicIds?:string[]; relatedQuestionIds?:string[]; triviaIds?:string[] }
 export type MasteryLevel = "unlearned"|"learning"|"understood"|"strong"|"mastered";
 export interface Topic { id:string; title:FuriganaText; category:string; description:FuriganaText; importance:1|2|3|4|5; difficulty:1|2|3|4|5; grades:Array<1|2|3|4|5>; prerequisiteTopicIds:string[]; relatedTopicIds:string[]; galleryId?:string; imageIds:string[]; diagramIds:string[]; triviaIds:string[]; questionIds:string[]; animationIds:string[]; order:number; packId?:string; chapterId?:string; areaId?:string; tags?:string[]; keyPoints?:FuriganaText[]; sourceUrls?:string[]; requiredCorrect?:number; createdAt?:string; updatedAt?:string }
