@@ -1,4 +1,4 @@
-const VERSION = "cosmo-quest-v11";
+const VERSION = "cosmo-quest-v12";
 const STATIC_CACHE = `${VERSION}-static`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 const APP_SHELL = [
