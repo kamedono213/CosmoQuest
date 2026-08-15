@@ -99,7 +99,7 @@ export interface ChapterData { id:string; rankId:string; order:number; title:Fur
 export interface AreaData { id:string; chapterId:string; order:number; title:FuriganaText; stageIds:string[] }
 export interface TopicProgress { status:MasteryLevel; answered:number; correct:number; totalSeconds:number; mistakes:number; consecutiveCorrect:number; lastStudiedAt:string }
 export interface StageProgress { lessonRead:boolean; answeredQuestionIds:string[]; correctQuestionIds:string[]; mainScore:number; miniTestPassed:boolean; miniTestScore:number; completedAt?:string }
-export interface GameState { coins:number; shipId:string; shipColor:string; engineId:string; unlockedShipIds:string[]; artifactIds:string[]; ownedItemIds:string[]; suitId:string; loginDays:number; lastLoginDate:string; claimedDailyIds:string[]; claimedWeeklyIds:string[]; lastReward?:{kind:"xp"|"artifact"|"trophy"|"discovery";label:string;rarity?:number} }
+export interface GameState { coins:number; shipId:string; shipColor:string; engineId:string; shipUpgradeLevel:number; unlockedShipIds:string[]; artifactIds:string[]; ownedItemIds:string[]; suitId:string; loginDays:number; lastLoginDate:string; claimedDailyIds:string[]; claimedWeeklyIds:string[]; lastReward?:{kind:"xp"|"artifact"|"trophy"|"discovery";label:string;rarity?:number} }
 
 export interface UserData {
   schemaVersion: 6;

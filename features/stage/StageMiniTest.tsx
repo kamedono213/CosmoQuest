@@ -1,7 +1,17 @@
 "use client";
-import { useMemo, useState } from "react";
+
 import { RubyText as R } from "@/components/RubyText";
-import { QuestionInput } from "@/features/questions/QuestionInput";
-import { isAnswerCorrect } from "@/lib/question-engine";
-import type { AnswerValue, Question, Stage } from "@/domain/models";
-export function StageMiniTest({stage,questions,mainScore,onPass,onRetryMain}:{stage:Stage;questions:Question[];mainScore:number;onPass:(score:number)=>void;onRetryMain:()=>void}){const pool=useMemo(()=>Array.from({length:Math.min(5,questions.length)},(_,i)=>questions[(i*3)%questions.length]),[questions]);const[index,setIndex]=useState(0);const[response,setResponse]=useState<AnswerValue|null>(null);const[correct,setCorrect]=useState(0);const[finished,setFinished]=useState(false);if(mainScore<80)return <div className="mini-test gate-fail"><div className="test-ring"><strong>{mainScore}%</strong><R text="本問題(ほんもんだい)"/></div><R as="h1" text="もう一度(いちど)確認(かくにん)しよう"/><R as="p" text="ステージクリアには本問題(ほんもんだい)で80パーセント以上(いじょう)が必要(ひつよう)です。"/><button className="primary" onClick={onRetryMain}><R text="問題(もんだい)をやり直(なお)す"/><b>↻</b></button></div>;if(!pool.length)return <div className="empty-state"><R as="h1" text="ミニテストの問題(もんだい)がありません"/></div>;if(finished){const score=Math.round(correct/pool.length*100);const pass=score>=80;return <div className="mini-test"><div className={`test-ring ${pass?"pass":"fail"}`}><strong>{score}%</strong><R text={pass?"合格(ごうかく)":"再挑戦(さいちょうせん)"}/></div><R as="h1" text={pass?"ミニテスト合格(ごうかく)！":"あと少(すこ)し！"}/><R as="p" text={pass?"すべてのクリア条件(じょうけん)を満(み)たしました。":"80パーセント以上(いじょう)で合格(ごうかく)です。"}/><button className="primary" onClick={()=>pass?onPass(score):(setIndex(0),setCorrect(0),setResponse(null),setFinished(false))}><R text={pass?"ステージをクリアする":"ミニテストをやり直(なお)す"}/><b>{pass?"✦":"↻"}</b></button></div>}const q=pool[index];return <div className="quiz-view mini-quiz"><div className="lesson-progress"><span><i style={{width:`${(index+1)/pool.length*100}%`}}/></span><b>MINI {index+1} / {pool.length}</b></div><div className="quiz-tag"><R text={`${stage.name} 最終(さいしゅう)チェック`}/></div><R as="h1" text={q.prompt}/><QuestionInput key={`${q.id}-${index}`} question={q} disabled={response!==null} onSubmit={a=>{setResponse(a);if(isAnswerCorrect(q,a))setCorrect(v=>v+1)}}/>{response!==null&&<button className="primary" onClick={()=>{if(index+1>=pool.length)setFinished(true);else{setIndex(v=>v+1);setResponse(null)}}}><R text={index+1>=pool.length?"採点(さいてん)する":"次(つぎ)の問題(もんだい)へ"}/><b>→</b></button>}</div>}
+import type { Question, Stage } from "@/domain/models";
+
+export function StageMiniTest({stage,questions,mainScore,onPass,onRetryMain}:{stage:Stage;questions:Question[];mainScore:number;onPass:(score:number)=>void;onRetryMain:()=>void}) {
+  const correct=Math.round(mainScore*questions.length/100);
+  const passed=correct>=6;
+  return <div className="mini-test route-result">
+    <div className={`test-ring ${passed?"pass":"fail"}`}><strong>{correct} / {questions.length}</strong><R text={passed?"航路調査成功(こうろちょうさせいこう)":"再挑戦(さいちょうせん)"}/></div>
+    <small>ROUTE CHECK COMPLETE</small>
+    <R as="h1" text={`${stage.name} 航路(こうろ)の調査結果(ちょうさけっか)`}/>
+    <R as="p" text={passed?"10問中(もんちゅう)6問以上(もんいじょう)正解(せいかい)したので、次(つぎ)の航路(こうろ)へ進(すす)めます。":"合格(ごうかく)には10問中(もんちゅう)6問正解(もんせいかい)が必要(ひつよう)です。新(あたら)しいランダム10問(もん)に挑戦(ちょうせん)しましょう。"}/>
+    <div className="test-summary"><span><R text="正解数(せいかいすう)"/><b>{correct}問</b></span><span><R text="合格基準(ごうかくきじゅん)"/><b>6 / 10</b></span></div>
+    <button className="primary" onClick={()=>passed?onPass(mainScore):onRetryMain()}><R text={passed?"次(つぎ)の航路(こうろ)を解放(かいほう)する":"ランダム10問(もん)に再挑戦(さいちょうせん)する"}/><b>{passed?"★":"↻"}</b></button>
+  </div>;
+}

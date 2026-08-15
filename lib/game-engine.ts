@@ -1,6 +1,6 @@
 import { artifacts, baseNames, shipLevels, titles } from "@/data/game-system";
 import type { GameState, UserData } from "@/domain/models";
-export const defaultGame:GameState={coins:300,shipId:"capsule",shipColor:"#79ddff",engineId:"plasma",unlockedShipIds:["capsule"],artifactIds:[],ownedItemIds:[],suitId:"classic",loginDays:1,lastLoginDate:new Date().toISOString().slice(0,10),claimedDailyIds:[],claimedWeeklyIds:[],lastReward:{kind:"xp",label:"初回ログイン +50 XP"}};
+export const defaultGame:GameState={coins:300,shipId:"capsule",shipColor:"#79ddff",engineId:"plasma",shipUpgradeLevel:0,unlockedShipIds:["capsule"],artifactIds:[],ownedItemIds:[],suitId:"classic",loginDays:1,lastLoginDate:new Date().toISOString().slice(0,10),claimedDailyIds:[],claimedWeeklyIds:[],lastReward:{kind:"xp",label:"初回ログイン +50 XP"}};
 export const levelFromXp=(xp:number)=>Math.min(100,Math.floor(Math.sqrt(Math.max(0,xp)/20))+1);
 export const shipClass=(level:number)=>[...shipLevels].reverse().find(([n])=>level>=n)?.[1]??shipLevels[0][1];
 export const playerTitle=(level:number)=>[...titles].reverse().find(([n])=>level>=n)?.[1]??titles[0][1];
