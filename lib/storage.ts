@@ -1,4 +1,4 @@
-import type { LearningResume, UserData } from "@/domain/models";
+import type { LearningResume, MockExamResume, UserData } from "@/domain/models";
 import { defaultGame } from "@/lib/game-engine";
 const DB_NAME="cosmo-quest"; const DB_VERSION=3; const STORE="app-state"; const CONTENT_STORE="content-overrides"; const KEY="current-user";
 export const SAVE_VERSION=1;
@@ -10,6 +10,10 @@ const RESUME_KEY="learning-resume";
 export async function loadLearningResume():Promise<LearningResume|null>{try{const db=await open();return await new Promise(resolve=>{const req=db.transaction(STORE).objectStore(STORE).get(RESUME_KEY);req.onsuccess=()=>resolve(req.result??null);req.onerror=()=>resolve(null)})}catch{return null}}
 export async function saveLearningResume(value:LearningResume){try{const db=await open();return await new Promise<void>((resolve,reject)=>{const tx=db.transaction(STORE,"readwrite");tx.objectStore(STORE).put(value,RESUME_KEY);tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}catch{return}}
 export async function clearLearningResume(){try{const db=await open();return await new Promise<void>((resolve,reject)=>{const tx=db.transaction(STORE,"readwrite");tx.objectStore(STORE).delete(RESUME_KEY);tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}catch{return}}
+const mockResumeKey=(rankId:MockExamResume["rankId"])=>`mock-exam-resume-${rankId}`;
+export async function loadMockExamResume(rankId:MockExamResume["rankId"]):Promise<MockExamResume|null>{try{const db=await open();return await new Promise(resolve=>{const req=db.transaction(STORE).objectStore(STORE).get(mockResumeKey(rankId));req.onsuccess=()=>resolve(req.result??null);req.onerror=()=>resolve(null)})}catch{return null}}
+export async function saveMockExamResume(value:MockExamResume){try{const db=await open();return await new Promise<void>((resolve,reject)=>{const tx=db.transaction(STORE,"readwrite");tx.objectStore(STORE).put(value,mockResumeKey(value.rankId));tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}catch{return}}
+export async function clearMockExamResume(rankId:MockExamResume["rankId"]){try{const db=await open();return await new Promise<void>((resolve,reject)=>{const tx=db.transaction(STORE,"readwrite");tx.objectStore(STORE).delete(mockResumeKey(rankId));tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}catch{return}}
 export async function loadContentOverride<T>():Promise<T|null>{try{const db=await open();return await new Promise(resolve=>{const req=db.transaction(CONTENT_STORE).objectStore(CONTENT_STORE).get("catalog");req.onsuccess=()=>resolve(req.result??null);req.onerror=()=>resolve(null)})}catch{return null}}
 export async function saveContentOverride<T>(catalog:T){try{const db=await open();return await new Promise<void>((resolve,reject)=>{const tx=db.transaction(CONTENT_STORE,"readwrite");tx.objectStore(CONTENT_STORE).put(catalog,"catalog");tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})}catch{return}}
 export async function clearAllData(){const db=await open();await Promise.all([STORE,CONTENT_STORE].map(name=>new Promise<void>((resolve,reject)=>{const tx=db.transaction(name,"readwrite");tx.objectStore(name).clear();tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error)})))}
