@@ -61,7 +61,7 @@ const journeyTrivia:TriviaData[]=journeyItems.map(x=>({id:`trivia-${x.id}`,topic
 const journeyGallery:GalleryItem[]=journeyItems.map(x=>({id:`gallery-${x.id}`,stageId:x.stage,category:x.class,title:x.gallery,subtitle:x.title,icon:x.stage==="earth"?"🌍":x.stage==="moon"?"🌙":"☀️",description:x.body,facts:x.points.map((value,i)=>({label:`重要(じゅうよう)ポイント${i+1}`,value})),relatedIds:[],tags:[`pack:${x.pack}`,x.class],packId:x.pack,relatedTopicIds:[x.id],relatedQuestionIds:x.points.map((_,n)=>`${x.id}-Q${n+1}`),triviaIds:[`trivia-${x.id}`]}));
 const journeyPrompts:ImagePromptData[]=journeyItems.map(x=>({id:`image-prompt-${x.id}`,topicIds:[x.id],purpose:"gallery",prompt:x.prompt,style:"科学的(かがくてき)に正確(せいかく)な教育用(きょういくよう)イラスト",background:"学習内容(がくしゅうないよう)に適(てき)した背景(はいけい)",textPolicy:"文字(もじ)・ラベルなし"}));
 function generatedChoices<T extends {id:string;class:string;points:string[]}>(items:T[],item:T,point:string,index:number){
-  const candidates=[...items.filter(v=>v.id!==item.id&&v.class===item.class),...items.filter(v=>v.id!==item.id&&v.class!==item.class)].flatMap(v=>v.points).filter((v,i,a)=>v!==point&&a.indexOf(v)===i);
+  const candidates=[...items.filter(v=>v.id!==item.id&&v.class!==item.class),...items.filter(v=>v.id!==item.id&&v.class===item.class)].flatMap(v=>v.points).filter((v,i,a)=>v!==point&&a.indexOf(v)===i);
   const distractors=Array.from({length:3},(_,offset)=>candidates[(index*3+offset)%candidates.length]);
   const correct=index%4,options=[...distractors];options.splice(correct,0,point);
   return{options,correct,otherChoices:distractors};
