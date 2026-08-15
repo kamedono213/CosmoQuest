@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export const APP_VERSION=process.env.NEXT_PUBLIC_APP_VERSION??"0.1.0";
-export const PWA_VERSION=process.env.NEXT_PUBLIC_PWA_VERSION??"cosmo-quest-v6";
+export const PWA_VERSION=process.env.NEXT_PUBLIC_PWA_VERSION??"cosmo-quest-v8";
 const GUIDE_KEY="cosmo-quest-install-guide-hidden";
 const UPDATE_INTERVAL=60*60*1000;
 
@@ -27,8 +27,9 @@ export function PwaLifecycle(){
     const controllerChanged=()=>{if(refresh)return;refresh=true;location.reload()};
     navigator.serviceWorker?.addEventListener("controllerchange",controllerChanged);
     if("serviceWorker" in navigator)navigator.serviceWorker.register("/sw.js",{scope:"/",updateViaCache:"none"}).then(reg=>{
-      if(reg.waiting)setWaiting(reg.waiting);
+      if(reg.waiting)reg.waiting.postMessage({type:"SKIP_WAITING"});
       reg.addEventListener("updatefound",()=>{const worker=reg.installing;worker?.addEventListener("statechange",()=>{if(worker.state==="installed"&&navigator.serviceWorker.controller)setWaiting(worker)})});
+      reg.update().catch(()=>undefined);
       interval=setInterval(()=>reg.update().catch(()=>undefined),UPDATE_INTERVAL);
     }).catch(()=>undefined);
     const orientation=screen.orientation as ScreenOrientation&{lock?:(value:"portrait")=>Promise<void>};

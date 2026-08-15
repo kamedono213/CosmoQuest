@@ -23,6 +23,8 @@ test("service worker provides cache updates and offline navigation", async () =>
   assert.match(worker, /addEventListener\("activate"/);
   assert.match(worker, /addEventListener\("fetch"/);
   assert.match(worker, /SKIP_WAITING/);
+  assert.match(worker, /await self\.skipWaiting\(\)/);
+  assert.match(worker, /cosmo-quest-v8/);
   assert.match(worker, /caches\.match\("\/offline\.html"\)/);
   await access(new URL("public/offline.html", root));
 });

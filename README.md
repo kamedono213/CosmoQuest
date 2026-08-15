@@ -24,7 +24,7 @@ npm run start
 | 変数 | 既定値 | 用途 |
 |---|---|---|
 | `NEXT_PUBLIC_APP_VERSION` | `0.1.0` | アプリVersion表示 |
-| `NEXT_PUBLIC_PWA_VERSION` | `cosmo-quest-v6` | PWA Version表示 |
+| `NEXT_PUBLIC_PWA_VERSION` | `cosmo-quest-v8` | PWA Version表示 |
 
 ローカルで変更する場合は`.env.example`を`.env.local`へコピーします。`NEXT_PUBLIC_`付きの値はブラウザへ公開されるため、秘密情報を設定しないでください。
 

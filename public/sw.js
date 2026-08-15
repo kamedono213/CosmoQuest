@@ -1,4 +1,4 @@
-const VERSION = "cosmo-quest-v7";
+const VERSION = "cosmo-quest-v8";
 const STATIC_CACHE = `${VERSION}-static`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 const APP_SHELL = [
@@ -16,6 +16,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE).then(async (cache) => {
       await Promise.allSettled(APP_SHELL.map((asset) => cache.add(asset)));
+      await self.skipWaiting();
     }),
   );
 });
